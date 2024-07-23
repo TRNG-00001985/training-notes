@@ -155,7 +155,7 @@ true or false
 - Young Generation(eden + 2 survior) - minor collection
 - Old Generation (tenured): Major collection
 
-[java garbage collection](./images/java-gc-generations.png)
+![java garbage collection](./images/java-gc-generations.png)
 
 ----
 
