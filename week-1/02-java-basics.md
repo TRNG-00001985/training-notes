@@ -164,3 +164,4 @@ String sObj = new "value"
 24. Matrix Addition
 25. Matrix Multiplication
 26. Transpose of a Matrix
+27. Sum of Digits of a number
