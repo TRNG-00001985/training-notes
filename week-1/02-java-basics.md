@@ -2,14 +2,14 @@
 
 - An Object or Wrapper for primitives with additional functionalities.
 
+- BYTE
+- SHORT
 - INTEGER
+- LONG
 - CHARACTER
-- BOOLEAN
 - FLOAT
 - DOUBLE
-- SHORT
-- LONG
-- BYTE
+- BOOLEAN
 
 **methods**
 
