@@ -139,7 +139,7 @@ String sObj = new "value"
 ### Coding Activity
 
 1. CombineStrings
-2. GreaterOrLesser
+2. GreaterOrLesser for 3 numbers
 3. HardcodedLogin
 4. ArraySum
 5. Average
