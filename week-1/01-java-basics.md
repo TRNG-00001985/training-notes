@@ -165,6 +165,11 @@ true or false
 2. swap two numbers
 3. octa to hexa
 4. hexa to octa
+5. FizzBizz
+6. leap year
+7. prime or composite
+8. LCM
+9. GCD
 
 ---
 
