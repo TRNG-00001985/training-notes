@@ -112,6 +112,7 @@ true or false
   - enum types 
 - interface
 - array types
+- strings
 
 **Object:** a bundle of state and behavior
 

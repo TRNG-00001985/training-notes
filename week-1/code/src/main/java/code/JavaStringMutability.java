@@ -9,7 +9,7 @@ public class JavaStringMutability {
 		String postfix = " sample text";
 		
 		long start = System.nanoTime();
-		for(int i =0;i<10000;i++) {
+		for(int i =0;i<1000000;i++) {
 			
 			stringBuilder.append(postfix);
 			
@@ -18,7 +18,7 @@ public class JavaStringMutability {
 		System.out.println("String builder execution time: " + (System.nanoTime()-start));
 		
 		start = System.nanoTime();
-		for(int i =0;i<10000;i++) {
+		for(int i =0;i<1000000;i++) {
 			
 			stringBuffer.append(postfix);
 			
