@@ -79,7 +79,7 @@ String sObj = new "value"
 
 
 **java.lang.StringBuffer** 
-- thread safe ot synchronized
+- thread safe or synchronized
 - slow when compared to StringBuilder
 
 **methods:**
