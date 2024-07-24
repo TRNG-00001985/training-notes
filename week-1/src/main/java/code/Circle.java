@@ -1,27 +1,29 @@
 package code;
 
 
-//interface Shape{ 
-//	
-//	float getArea();
-//	float getPerimeter();
-//	
-//}
-
-abstract class Shape{
+interface Shape{ 
 	
-	int sides;
-	abstract float getArea();
-	abstract float getPerimeter();
+	float getArea();
+	float getPerimeter();
 	
-	public void setSides() {
-		
-		sides = 4;
-		
-	}
 }
 
-public class Circle extends Shape{
+//abstract class Shape{
+//	
+//	int sides;
+//	abstract float getArea();
+//	abstract float getPerimeter();
+//	
+//	public void setSides() {
+//		
+//		sides = 4;
+//		
+//	}
+//}
+
+public class Circle implements Shape{
+
+//public class Circle extends Shape{
 	
 	int radius = 4;
 
@@ -50,8 +52,9 @@ public class Circle extends Shape{
 
 }
 
+class Rectangle implements Shape{
 
-class Rectangle extends Shape{
+// class Rectangle extends Shape{
 	int length = 4;
 	int breadth = 5;
 	@Override
