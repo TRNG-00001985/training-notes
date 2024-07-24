@@ -135,18 +135,16 @@ Types:
 #### Shadowing
 
 - declaration of a variable or parameter in a particular scope has the same name as another decleration in the enclosing scope.
+
+**[Reference](https://docs.oracle.com/javase/tutorial/index.html)**
+
+
 ## Object-oriented programming
 Now that we have seen programs that are processed based on functions and procedures, we also have programs that run based on objects. Yes, they are more detail-oriented and help in data security and integrity.
 
 In the programming world, we define it as a paradigm that is based on the concept of "objects", which are self-contained units of data and functionality. In OOP, objects are created from classes, which define their properties and methods. Objects can interact with each other by sending messages (method calls) and can change their internal state as a result.
 
 OOP is commonly used in many programming languages like Java, C++, Python, C#, etc. OOP is useful for modelling real-world objects and systems, and for creating reusable and maintainable code.
-
-
-
-
-**[Reference](https://docs.oracle.com/javase/tutorial/index.html)**
-## OOP
 
 ### Abstraction
    
