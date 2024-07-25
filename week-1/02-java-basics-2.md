@@ -17,7 +17,7 @@
 - parse : string to wrapper class
 - equals : compare two objects
 
-### Casting (Auto Boxing and Unboxing)
+### Auto Boxing and Unboxing
 
 **Auto Boxing:** Converting primitives to Wrapper Classes
 
