@@ -11,7 +11,7 @@
 
 **exception object:** info about the error + type and state of the program.
 
-**Error:** jvm throws and errot if a dynamic linking failure or any other had failure occurs. errors are neither caught nor thrown by the programmers.
+**Error:** jvm throws and error if a dynamic linking failure or any other hard failure occurs. errors are neither caught nor thrown by the programmers.
 
 
 ![exceptions](./images/exceptions.jpg)
