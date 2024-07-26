@@ -36,6 +36,17 @@ public class Access {
 		
 		staticMethod();
 		System.out.println(Access.staticVar);
+
+//		enum
+		Day d = Day.MONDAY;
+		
+		System.out.println(d.getType());
+		
+//		Direction north = new Direction("NORTH");
+//		Direction south = new Direction("SOUTH");
+//		
+//		System.out.println(north.getDirection());
+//		System.out.println(south.getDirection());
 		
 	}
 	
@@ -56,4 +67,19 @@ class ChildAccess extends Access{
 		
 		
 	}
+}
+
+class Direction{
+	
+	private final String direction;
+	
+	Direction (String direction){
+		this.direction = direction;
+	}
+	
+	String getDirection() {
+		return this.direction;
+	}
+	
+	
 }
