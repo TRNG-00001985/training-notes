@@ -88,5 +88,25 @@ Spring : Dependency Injection, Bean Creation and Management and AOP etc.
 - contains the project desciption and configuration of plugins ad dependencies.
 
 
+#### project identifiers
+
+- groupId: unique base name (company or group)
+- artifactId: unique project name
+- version
+- packaging - method (JAR/WAR/ZIP)
+
+**dependencies:** external libraries that the project uses
+
+- groupId
+- artifactId
+- version
+
+**properties**: value placeholders that can be accessed anywhere in pom.xml using `${name}`.
+
+**build**: build info - the goal dir of the compiled project, final name etc.
+
+
+
+
 
 
