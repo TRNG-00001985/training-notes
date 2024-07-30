@@ -9,7 +9,9 @@
 
 ---
 
-### Database Theory with Respect to MySQL
+### MySQL
+
+**[mysql workbench download](https://dev.mysql.com/downloads/workbench/)**
 
 #### What is a Database?
 
