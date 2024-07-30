@@ -155,7 +155,7 @@ example:
 TRUNCATE table Products;
 ```
 
-**ALTER:** 
+**ALTER:**  used to alter the structure of the table.
 
 ```sql
 ALTER TABLE table_name
@@ -288,9 +288,7 @@ patten matching:
 - `^` - begining
 - `$` - ending
 
-```sql
-SELECT * from Product WHERE  REGEXP_LIKE(product_name, '') ;
-```
+
 
 **[pattern matching sql docs](https://dev.mysql.com/doc/refman/8.4/en/pattern-matching.html)**
 
