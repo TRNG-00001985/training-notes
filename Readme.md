@@ -12,7 +12,7 @@
 
 ### Afternoon Session - 1:30 PM to 5:30 PM
 
-- **Lecture / Guided Coding Example:** 1hr
+- **Lecture / Guided Coding Example:** 1hr 45 min
 - **Coding Activity / Coding Challenge:** 2hrs
 - **Afternoon Break:** 3:15 PM to 3:30 pM
 
