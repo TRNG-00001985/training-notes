@@ -111,6 +111,23 @@ A primary key with two or more columns
 example:
 
 ```sql
+create database ecommerce;
+use ecommerce;
+
+CREATE table Products(
+id BIGINT PRIMARY KEY AUTO_INCREMENT,
+product_name VARCHAR(50),
+sku_code VARCHAR(50) unique,
+price FLOAT(10,2),
+CHECK (price>0)
+);
+
+
+CREATE table Orders(
+id BIGINT PRIMARY KEY AUTO_INCREMENT,
+product_id BIGINT,
+quantity INT
+);
 ```
 - **DROP:** Deletes a table or database.
 
@@ -122,7 +139,8 @@ example:
 example:
 
 ``` sql
-
+drop table Orders;
+drop database ecommerce;
 ```
 
 - **TRUNCATE:** removes all rows from a table without deleting the table itself.
@@ -134,7 +152,23 @@ example:
 example:
 
 ```sql
+TRUNCATE table Products;
 ```
+
+**ALTER:** 
+
+```sql
+ALTER TABLE table_name
+ADD conditions
+```
+
+example:
+
+```sql
+ALTER table Orders
+ADD FOREIGN KEY (product_id) REFERENCES Product(id) ON DELETE SET NULL ON UPDATE CASCADE;
+```
+
 
 ### Constraints
 
@@ -184,14 +218,38 @@ column_name datatype DEFAULT default_value
 INSERT INTO table_name (column1, column2, ...) VALUES (value1, value2, ...);
 ```
 
+example:
+
+```sql
+INSERT into Products(product_name, sku_code, price)  values 
+('Laptop', 'LAP123', 999.99),
+('Smartphone', 'PHN456', 499.49),
+('Tablet', 'TAB789', 299.99);
+
+INSERT into Orders(product_id, quantity)
+values (1,2),(2,1),(3,2);
+```
+
 **UPDATE:** modifies existing rows in a table.
 ```sql
 UPDATE table_name SET column1 = value1, column2 = value2, ... WHERE condition;
 ```
 
+example
+
+```sql
+UPDATE Products SET id=5 WHERE id=2;
+```
+
 **DELETE:** removes rows from a table.
 ```sql
 DELETE FROM table_name WHERE condition;
+```
+
+example
+
+```sql
+DELETE from Products WHERE id=1;
 ```
 
 ### DQL (Data Query Language)
@@ -210,6 +268,11 @@ SELECT column1, column2, ... FROM table_name WHERE condition;
 SELECT column1, column2, ... FROM table_name WHERE column_name LIKE pattern;
 ```
 
+example:
+```
+SELECT * from Product WHERE product_name LIKE '%t';
+```
+
 patten matching:
 
 - begining `c%`
@@ -224,6 +287,10 @@ patten matching:
 - [a-z], [0-9] , alpha numeric
 - `^` - begining
 - `$` - ending
+
+```sql
+SELECT * from Product WHERE  REGEXP_LIKE(product_name, '') ;
+```
 
 **[pattern matching sql docs](https://dev.mysql.com/doc/refman/8.4/en/pattern-matching.html)**
 
