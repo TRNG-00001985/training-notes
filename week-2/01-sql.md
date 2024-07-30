@@ -11,7 +11,7 @@
 
 ### MySQL
 
-**[mysql workbench download](https://dev.mysql.com/downloads/workbench/)**
+**[mysql installer download](https://dev.mysql.com/downloads/installer/)**
 
 #### What is a Database?
 
