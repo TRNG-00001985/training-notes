@@ -1,8 +1,6 @@
 # Lecture/Guided Coding Example Plan
 
 1. TCL
-2. Sub Queries
-3. Joins
 
 ---
 
