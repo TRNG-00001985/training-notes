@@ -39,9 +39,9 @@
 
 modes that can be set on a session that controlls the concurrent transactions.
 
-- Read Uncommited: All transactions can read the uncommited data from the other transactions.
+- Read Uncommited: All transactions can read the uncommited data from the other transactions. leads to dirty reads.
   
-- Read Commited: All transactions can read the commited data from other transactions. 
+- Read Commited: All transactions can read the commited data from other transactions. leads to phantom read.
 
 - Repetable Read: Creates a snapshot at the begining of the transtaction. Both commited and uncommited data is not reflected. Default isolation level in InnoDB (storage engine for MySQL)
 
