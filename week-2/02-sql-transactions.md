@@ -1,8 +1,6 @@
 # Lecture/Guided Coding Example Plan
 
 1. TCL
-2. Sub Queries
-3. Joins
 
 ---
 
@@ -41,19 +39,38 @@
 
 modes that can be set on a session that controlls the concurrent transactions.
 
-- Read Uncommited: All transactions can read the uncommited data from the other transactions.
+- Read Uncommited: All transactions can read the uncommited data from the other transactions. leads to dirty reads.
   
-- Read Commited: All transactions can read the commited data from other transactions. 
+- Read Commited: All transactions can read the commited data from other transactions. leads to phantom read.
 
-- Repetable Read: Creates a snapshot of the transtaction. Default isolation level in InnoDB (storage engine for MySQL)
+- Repetable Read: Creates a snapshot at the begining of the transtaction. Both commited and uncommited data is not reflected. Default isolation level in InnoDB (storage engine for MySQL)
 
 - Serializable: locks the other transaction when one transaction is in progress.
 
 ```sql
-set transaction_isolation = ""
+SET SESSION | GLOBAL transaction_isolation = 'READ-UNCOMMITTED';
+```
+
+or 
+
+```sql
+SET GLOBAL | SESSION TRANSACTION ISOLATION LEVEL [READ COMMITTED | READ UNCOMMITTED | REPEATABLE READ | SERIALIZABLE]
 ```
 
 ```
 select @SESSION.transaction_isolation;
 ```
+
+**SCOPE:**
+
+**GLOBAL:** The statement applies globally for all subsequent sessions.
+
+**SESSION:** The statement applies to all subsequent transactions performed within the current session.
+
+
+**Reference**
+
+1. [isolation levels](https://dev.mysql.com/doc/refman/8.4/en/set-transaction.html#set-transaction-isolation-level)
+
+
 
