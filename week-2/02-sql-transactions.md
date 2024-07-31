@@ -48,7 +48,7 @@ modes that can be set on a session that controlls the concurrent transactions.
 - Serializable: locks the other transaction when one transaction is in progress.
 
 ```sql
-set transaction_isolation = ""
+set @SESSION.transaction_isolation = ""
 ```
 
 ```
