@@ -20,7 +20,7 @@
 
 
 
-**3.  Full Outer Join:** MySQL does'nt support  full outer join. An Union of left join and right join returns the similar result.
+- **Full Outer Join:** MySQL does'nt support  full outer join. An Union of left join and right join returns the similar result.
 
 
 **Cross Join:** Cartisian product. retunrs all possible combinations between two tables. 
