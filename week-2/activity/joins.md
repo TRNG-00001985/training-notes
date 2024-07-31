@@ -7,6 +7,7 @@
 | 2          | Jane         | 2            |
 | 3          | Mark         | 1            |
 | 4          | Emily        | 3            |
+| 5          | Karen        | 5            |
 
 **Departments**
 | DepartmentID | DepartmentName |
@@ -15,6 +16,7 @@
 | 2            | HR             |
 | 3            | IT             |
 | 4            | Marketing      |
+| 5            | NULL      |
 
 **Projects**
 | ProjectID | ProjectName  | DepartmentID |
@@ -31,7 +33,7 @@
 2. Retrieve all employees and their associated department names. If an employee does not belong to a department, show NULL.
 3. Retrieve all departments and the names of employees in those departments. If a department does not have any employees, show NULL.
 4. Retrieve all possible combinations of employees and projects.
-5. Retrieve the list of employees whose department ID is greater than the department ID of their department
+5. Retrieve the list of employees whose department ID is greater than the department ID of 'HR' department.
 6. Retrieve the list of projects along with their department names, where the projects are associated with departments
 7. Find employees who are not assigned to any department
 8. Find departments that have no employees
