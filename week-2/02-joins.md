@@ -13,10 +13,10 @@
 
 **Outer Join:** 
 
-    - **Left Join**  returns all the records from the left table and the matched records from the right table. if there is no match, the result is NULL on the right table.
+- **Left Join**  returns all the records from the left table and the matched records from the right table. if there is no match, the result is NULL on the right table.
 
 
-    - **Right Join:** returns all the records from the right table and the matched records from the left table. if there is no match, the result is NULL on the left table.
+- **Right Join:** returns all the records from the right table and the matched records from the left table. if there is no match, the result is NULL on the left table.
 
 
 
