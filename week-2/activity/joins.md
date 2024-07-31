@@ -17,7 +17,7 @@
 | 2            | HR             |
 | 3            | IT             |
 | 4            | Marketing      |
-| 5            | Null      |
+| 5            | NULL      |
 
 **Projects**
 | ProjectID | ProjectName  | DepartmentID |
