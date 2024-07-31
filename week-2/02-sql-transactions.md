@@ -67,5 +67,7 @@ select @SESSION.transaction_isolation;
 
 **SESSION:** The statement applies to all subsequent transactions performed within the current session.
 
+[isolation levels]('https://dev.mysql.com/doc/refman/8.4/en/set-transaction.html#set-transaction-isolation-level')
+
 
 
