@@ -1,4 +1,3 @@
-Sure! Here are some scenario-based coding questions involving different types of joins, using a sample database.
 
 ### Employee Database Schema
 
