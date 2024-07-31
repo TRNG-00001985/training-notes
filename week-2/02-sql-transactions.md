@@ -48,7 +48,13 @@ modes that can be set on a session that controlls the concurrent transactions.
 - Serializable: locks the other transaction when one transaction is in progress.
 
 ```sql
-set @SESSION.transaction_isolation = ""
+SET SESSION | GLOBAL transaction_isolation = 'READ-UNCOMMITTED';
+```
+
+or 
+
+```sql
+SET GLOBAL | SESSION TRANSACTION ISOLATION LEVEL [READ COMMITTED | READ UNCOMMITTED | REPEATABLE READ | SERIALIZABLE]
 ```
 
 ```
