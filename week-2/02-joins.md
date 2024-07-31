@@ -36,5 +36,7 @@
 
 - a select statemenet within another statemnt.
 
+</i><b>Note:</b> ON condition is optional for INNER JOIN and JOIN. </i>
+
 
 
