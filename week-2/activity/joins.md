@@ -8,6 +8,7 @@
 | 2          | Jane         | 2            |
 | 3          | Mark         | 1            |
 | 4          | Emily        | 3            |
+| 5          | Karen        | 5            |
 
 **Departments**
 | DepartmentID | DepartmentName |
@@ -16,6 +17,7 @@
 | 2            | HR             |
 | 3            | IT             |
 | 4            | Marketing      |
+| 5            | None      |
 
 **Projects**
 | ProjectID | ProjectName  | DepartmentID |
