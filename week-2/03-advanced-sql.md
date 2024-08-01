@@ -83,8 +83,10 @@ ALTER VIEW view_name AS QUERY
 - UCASE
 - LCASE
 - MID
-- LEN
+- LENNGTH
 - ROUND
+- FLOOR
+- CEIL
 
 
 [mysql operator and function reference](https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html)
