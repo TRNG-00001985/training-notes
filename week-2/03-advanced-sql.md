@@ -102,13 +102,15 @@ In MySQL Auto_increment is used to create a sequence for the primay keys
 ## Stored Procedure
 
 - a set of SQL statements that can be executed as a program.
+- accpets zero or inputs and returns zero or more outputs.
+- allows DML staments.
 - performace improvement, security and encapsulation of complex operations.
 
 
 ```sql
 delimiter //
 
-create procedure procedure_name (paramneters)
+create procedure procedure_name (IN paramenters, OUT values)
 begin
  -- SQL statements
 end//
@@ -123,3 +125,35 @@ call prodeure_name (args)
 ```sql
 DROP PROCEDURE IF EXISTS procedure_name
 ```
+
+
+## User Defined Functions
+
+- custom functions that encapulate the complex operations.
+- accepts multiple inputs and returns a table (table) or a single input (scalar)
+- select statements are allowed
+- can be invoked from procedures
+- can be embedded in select statements
+
+```sql
+delimiter//
+create function procedure_name (paramenters)
+
+BEGIN
+
+-- sql statements
+
+END//
+
+delimiter ;
+```
+
+```sql
+select function_name(args)
+```
+
+```sql
+drop function function_name
+```
+
+
