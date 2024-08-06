@@ -1,8 +1,8 @@
 # Lecture/Guided Coding Example Plan
 
 1. Time and Space Complexity (Big O notation)
-2. Collections
-3. Collection API
+2. Collection API
+3. Collections Class
 
 ---
 
