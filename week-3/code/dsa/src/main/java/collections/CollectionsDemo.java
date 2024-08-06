@@ -117,12 +117,14 @@ public class CollectionsDemo {
 		
 		ArrayList<Player> players = new ArrayList<Player>();
 		
-		players.add(new Player(2,"Travis", 1,32));
-		players.add(new Player(1, "patrik", 5, 27));
+		players.add(new Player(5,"Travis", 1,32));
+		players.add(new Player(3,"Travis", 1,32));
+		players.add(new Player(1, "Patrik", 5, 27));
+		players.add(new Player(4,"Travis", 1,32));
 		
 		PlayerComparator pc = new PlayerComparator();
 		
-		//Collections.sort(players,pc);
+		Collections.sort(players,pc);
 		Collections.reverse(arrayList);
 		Collections.min(arrayList);
 		
@@ -130,10 +132,10 @@ public class CollectionsDemo {
 			System.out.println(p.toString());
 		}
 		
+		String s1 = "cat";
+		String s2 = "cat";
 		
-		
-			
-		
+		System.out.println(s1.compareTo(s2));
 		
 	}
 
