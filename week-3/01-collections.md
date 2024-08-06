@@ -13,7 +13,7 @@
 synatx 
 
 ```java
-class name<T1,T2,...,Tn>{/*..*/}
+<T>
 ```
 
 naming convestions
