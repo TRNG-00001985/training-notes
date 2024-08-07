@@ -14,7 +14,7 @@
 - classes defined in a block.
 - commonly defined in body of a method.
 
-## Anonymous Functions
+## Anonymous class
 
 - anonymous classes allow decalreation and instantiation of a class at same time.
 - local classes without a name.

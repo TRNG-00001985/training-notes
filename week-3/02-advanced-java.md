@@ -52,10 +52,19 @@ Scanner: text scanner that can parse primitives and strings using regex.
 ### Logging Levels
 
 - TRACE: most detailed, used for tracing program execution. ex: flow of execution within loops or recursive calls.
-- DEBUG: detailed info for debugging. ex: application state and behavior
+- DEBUG: detailed info for debugging. ex: application state and behavior.
 - INFO: informational messages. ex: events like startup, config details and major milestones.
 - WARN: potentially harmful situations that might not immediately affect the application but could lead to errors. ex: deprecated api usage.
 - ERROR: error events that might still allow the application to continue running. ex: runtime errors, and exceptions.
+
+| level of request p | effective level q |       |      |      |       |     |
+|--------------------|-------------------|-------|------|------|-------|-----|
+|                    | TRACE             | DEBUG | INFO | WARN | ERROR | OFF |
+| TRACE              | YES               | NO    | NO   | NO   | NO    | NO  |
+| DEBUG              | YES               | YES   | NO   | NO   | NO    | NO  |
+| INFO               | YES               | YES   | YES  | NO   | NO    | NO  |
+| WARN               | YES               | YES   | YES  | YES  | NO    | NO  |
+| ERROR              | YES               | YES   | YES  | YES  | YES   | NO  |
 
 
 ### Apenders
