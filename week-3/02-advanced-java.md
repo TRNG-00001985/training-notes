@@ -1,13 +1,13 @@
 # Lecture/ Guided Coding Examle
 
 1. IO Serialization
-2. Functional Programming
+2. Logging
+3. Functional Programming
    1. Functional interface
    2. Lambda
    3. optional class
    4. method reference
    5. stream-api
-3. Logging
 
 ---
 
@@ -16,12 +16,24 @@
 
 ## Serialization
 
+- the process of conversion java object into a static stream of bytes is called Serialization and the opposite is called deserialization.
+- primitive data types, object references, arrays and strings are serializable.
+- transient variables and static varibales are not serialized.
+- sensitive information like passwords and large objects are declared transient for security and improved performance.
+
 
 ## File I/O
 
+FileInputStream: reads raw byte streams from a file.
+FileOutputStream: writes raw byte streams to a file.
+FileReader:reads character streams from a file
+BufferReader: reads text(lines) from a character stream. 
+FileWriter: writes charater streams to a file
+BufferedWriter: reads text(lines) from a character stream
+PrintWriter: prints formated represntations of pbjects to a text-output stream.
+Scanner: text scanner that can parse primitives and strings using regex.
 
 # Logging
-
 
 ##  Logback
 
@@ -35,11 +47,13 @@
 
 - specifies the root logging level
 
-    - TRACE
-    - DEBUG
-    - INFO
-    - WARN
-    - ERROR
+### Logging Levels
+
+- TRACE: most detailed, used for tracing program execution. ex: flow of execution within loops or recursive calls.
+- DEBUG: detailed info for debugging. ex: application state and behavior
+- INFO: informational messages. ex: events like startup, config details and major milestones.
+- WARN: potentially harmful situations that might not immediately affect the application but could lead to errors. ex: deprecated api usage.
+- ERROR: error events that might still allow the application to continue running. ex: runtime errors, and exceptions.
 
 
 ### Apenders
@@ -65,18 +79,3 @@ ex: user Id
 **Reference**
 
 [logback official docs](https://logback.qos.ch/manual/index.html)
-
-
-# Functional Programming
-
-## Anonymous function
-
-## Functional Interfaces
-
-## Lambdas
-
-## Method References
-
-## Optional Class
-
-## Stream API
