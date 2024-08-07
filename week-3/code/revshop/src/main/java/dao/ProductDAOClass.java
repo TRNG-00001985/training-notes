@@ -20,6 +20,8 @@ public class ProductDAOClass implements ProductDao{
 
 	@Override
 	public ProductResponse getProductById(long id) {
+		MDC.put("userId", String.valueOf(id));
+		
 		String sql =  "SELECT * FROM Products WHERE ID = ?";
 		try(Connection con = ConnectionFactory.getConnectionFactory().getConnection(); PreparedStatement stmt = con.prepareStatement(sql)){
 			

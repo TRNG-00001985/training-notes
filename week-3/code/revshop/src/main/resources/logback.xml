@@ -2,7 +2,9 @@
 
 <appender name="ConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
 <encoder>
-<pattern>%d{HH:mm:ss.SSS} %.-1level %logger - %thread - %msg%n</pattern>
+<layout>
+<pattern>%d{HH:mm:ss.SSS} %.-1level %logger - %thread - %msg  %X{userId} %n </pattern>
+</layout>
 </encoder>
  <withFormattedMessage>true</withFormattedMessage>
 </appender>
@@ -23,24 +25,23 @@
 	revshop.log
 </file>
 
-<rollingpolicy class = "ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-	<fileNamePattern>revshop-%d{dd-MM-yy_HH:mm}.%i.log</fileNamePattern>
-	<maxFileSize>10MB</maxFileSize>
-	<maxHistory>10</maxHistory>
-</rollingpolicy>
+<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>revhire-%d{yy-MM-dd_HH-mm}.%i.log</fileNamePattern>
+			<maxFileSize>10MB</maxFileSize>
+			<maxHistory>10</maxHistory>
+			
+</rollingPolicy>
 
 <encoder>
 <pattern>%d{HH:mm:ss.SSS} %.-1level %logger - %thread - %msg%n</pattern>
-
-</encoder>
 <withFormattedMessage>true</withFormattedMessage>
-<withMessage>false</withMessage>
+</encoder>
 </appender>
 
-<root level="Debug">
+<root level="Trace">
 
 <appender-ref ref="ConsoleAppender"></appender-ref>
-<appender-ref ref="FILE"></appender-ref>
+<appender-ref ref="FileAppender"></appender-ref>
 
 </root>
 
