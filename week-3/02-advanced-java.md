@@ -37,6 +37,8 @@ Scanner: text scanner that can parse primitives and strings using regex.
 
 ##  Logback
 
+[logback classic maven dependecy](https://mvnrepository.com/artifact/ch.qos.logback/logback-classic)
+
 ### Logback Introduction
 
 - logback is fast logging system.
