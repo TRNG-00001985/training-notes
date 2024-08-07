@@ -1,0 +1,2 @@
+#logback.classic pattern: %d %-5level [%thread] %logger{0}: %msg%n
+2024-08-07 16:09:42,467 ERROR [main] ProductDAOClass: Product retreived

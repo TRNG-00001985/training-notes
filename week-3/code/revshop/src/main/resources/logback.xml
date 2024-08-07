@@ -1,0 +1,48 @@
+<configuration>
+
+<appender name="ConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+<encoder>
+<pattern>%d{HH:mm:ss.SSS} %.-1level %logger - %thread - %msg%n</pattern>
+</encoder>
+ <withFormattedMessage>true</withFormattedMessage>
+</appender>
+
+
+ <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <file>foo.log</file>
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <pattern>%d %-5level [%thread] %logger{0}: %msg%n</pattern>
+      <outputPatternAsHeader>true</outputPatternAsHeader>
+    </encoder>
+  </appender>
+  
+  
+<appender name="FileAppender" class = "ch.qos.logback.core.rolling.RollingFileAppender">
+
+<file>
+	revshop.log
+</file>
+
+<rollingpolicy class = "ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+	<fileNamePattern>revshop-%d{dd-MM-yy_HH:mm}.%i.log</fileNamePattern>
+	<maxFileSize>10MB</maxFileSize>
+	<maxHistory>10</maxHistory>
+</rollingpolicy>
+
+<encoder>
+<pattern>%d{HH:mm:ss.SSS} %.-1level %logger - %thread - %msg%n</pattern>
+
+</encoder>
+<withFormattedMessage>true</withFormattedMessage>
+<withMessage>false</withMessage>
+</appender>
+
+<root level="Debug">
+
+<appender-ref ref="ConsoleAppender"></appender-ref>
+<appender-ref ref="FILE"></appender-ref>
+
+</root>
+
+
+</configuration>
