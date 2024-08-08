@@ -4,10 +4,10 @@ public class ProductResponse {
 	private long id;
 	private String name;
 	private String skuCode;
-	private float price;
+	private double price;
 	
 	
-	public ProductResponse(long id, String name, String skuCode, float price) {
+	public ProductResponse(long id, String name, String skuCode, double price) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -32,7 +32,7 @@ public class ProductResponse {
 	public void setSkuCode(String skuCode) {
 		this.skuCode = skuCode;
 	}
-	public float getPrice() {
+	public double getPrice() {
 		return price;
 	}
 	public void setPrice(float price) {

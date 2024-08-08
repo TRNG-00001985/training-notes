@@ -32,13 +32,13 @@ public class ConnectionFactory {
 	public Connection getConnection() {
 		
 		try {
+			//Class.forName("com.mysql.jdbc.Driver") can be ignored
 			return DriverManager.getConnection(
 					props.getProperty("url"),
 					props.getProperty("username"),
 					props.getProperty("password")
 					);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -46,8 +46,6 @@ public class ConnectionFactory {
 		
 	}
 	
-	//Class.forName("com.mysql.jdbc.Driver")
-	//DriverManager.registerDriver()
 	
 	
 
