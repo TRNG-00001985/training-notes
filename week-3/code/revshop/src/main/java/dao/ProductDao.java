@@ -1,6 +1,7 @@
 package dao;
 
 import java.util.List;
+import java.util.Optional;
 
 import dto.ProductRequest;
 import dto.ProductResponse;
@@ -8,10 +9,10 @@ import entity.Product;
 
 public interface ProductDao {
 	
-	ProductResponse getProductById(long id);
+	Optional<ProductResponse> getProductById(long id) throws Exception;
 	boolean createProduct(ProductRequest productRequest);
 	boolean updateProduct(ProductResponse productResponse);
 	boolean deleteProduct(long id);
-	List<ProductResponse> getAllProducts();
+	List<Optional<ProductResponse>> getAllProducts();
 
 }

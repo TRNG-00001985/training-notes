@@ -5,7 +5,7 @@ public class Product {
 	private long id;
 	private String name;
 	private String skuCode;
-	private float price;
+	private double price;
 	
 	
 	public Product(long id, String name, String skuCode, float price) {
@@ -34,7 +34,7 @@ public class Product {
 	public void setSkuCode(String skuCode) {
 		this.skuCode = skuCode;
 	}
-	public float getPrice() {
+	public double getPrice() {
 		return price;
 	}
 	public void setPrice(float price) {

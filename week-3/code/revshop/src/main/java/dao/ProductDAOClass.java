@@ -6,42 +6,57 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 
+import dao.exception.ProductException;
 import dto.ProductRequest;
 import dto.ProductResponse;
 import utils.ConnectionFactory;
 
 public class ProductDAOClass implements ProductDao{	
 	
+	
+	
 	private static final Logger logger = LoggerFactory.getLogger(ProductDAOClass.class);
 
 	@Override
-	public ProductResponse getProductById(long id) {
-		MDC.put("userId", String.valueOf(id));
+	public Optional<ProductResponse> getProductById(long id) throws ProductException {
 		
+		MDC.put("userId", String.valueOf(id));
+
 		String sql =  "SELECT * FROM Products WHERE ID = ?";
 		try(Connection con = ConnectionFactory.getConnectionFactory().getConnection(); PreparedStatement stmt = con.prepareStatement(sql)){
 			
 			stmt.setFloat(1, id);
 			
 			logger.trace("Product retreived");
-			logger.error("Product retreived");
-
+			
+			Optional<ProductResponse> product = Optional.empty();
 
 			
 			try(ResultSet rs = stmt.executeQuery()){
 				
 				if(rs.next()) {
-					return new ProductResponse(
+					
+					
+					ProductResponse productRepsonse = new ProductResponse(
 							rs.getLong("id"),
 							rs.getString("name"),
 							rs.getString("sku_code"),
 							rs.getFloat("price")
 							);
+					
+					product.of(productRepsonse);
+
+					
+					return product;
 				}
+				product.orElseThrow( () -> new ProductException("No product found"));
+
 				
 			}
 			
@@ -91,25 +106,25 @@ public class ProductDAOClass implements ProductDao{
 	}
 
 	@Override
-	public List<ProductResponse> getAllProducts() {
+	public List<Optional<ProductResponse>> getAllProducts() {
 		String sql =  "SELECT * FROM Products";
 		
-		List<ProductResponse> products = new ArrayList();
+		List<Optional<ProductResponse>> products = new ArrayList();
 		
 		try(Connection con = ConnectionFactory.getConnectionFactory().getConnection(); PreparedStatement stmt = con.prepareStatement(sql)){
 						
 			try(ResultSet rs = stmt.executeQuery()){
 				
-				ProductResponse response = null;
+				Optional<ProductResponse> response = Optional.empty();
 				
 				while(rs.next()) {
 					
-					response = new ProductResponse(
+					response = Optional.of(new ProductResponse(
 								rs.getLong("id"),
 								rs.getString("name"),
 								rs.getString("sku_code"),
-								rs.getFloat("price")
-								);
+								rs.getDouble("price")
+								));
 					
 					products.add(response);
 				}
