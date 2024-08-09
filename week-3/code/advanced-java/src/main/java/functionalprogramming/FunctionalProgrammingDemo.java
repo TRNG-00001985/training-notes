@@ -80,7 +80,7 @@ public class FunctionalProgrammingDemo{
 		
 		String [] names = {"Choclates", "pikachu", "Desk", "pikachu"};
 		
-		//instance method with arbitary values
+		//instance method with arbitry values
 		Arrays.sort(names, String::compareToIgnoreCase);
 		
 		
@@ -95,6 +95,7 @@ public class FunctionalProgrammingDemo{
 		Supplier<Set<String>> setSupplier = HashSet<String>::new;
 		
 		Set<String> unames = setSupplier.get();
+		
 		
 		
 		
