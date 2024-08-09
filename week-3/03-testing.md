@@ -44,8 +44,8 @@
 ### Annotations
 
 - Test
-- Before
-- After
+- BeforeAll
+- AfterAll
 - BeforeEach
 - AfterEach
 
@@ -74,7 +74,6 @@
 **Basic Annotations**
 - @Mock: Used to create and inject mock objects.
 - @InjectMocks: Creates an instance of the class under test and injects mocks into it.
-- @BeforeEach: Initializes mocks before each test method.
 
 
 **Stubs**
