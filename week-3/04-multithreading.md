@@ -1,6 +1,6 @@
 # Lecture / Guided Coding Example
 
-2. multithreading
+1. multithreading
    1. thread class
    2. runnable Interface
    3. states if a thread
