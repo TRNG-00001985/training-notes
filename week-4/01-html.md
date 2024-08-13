@@ -14,7 +14,7 @@
 HTML stands for Hyper Text Markup Language. It was created in 1989 by Tim Berners-Lee and Robert Calliau. HTML is used to define the structure and content of a webpage.(Building blocks of web pages)
 
 **HyperText:** The document containes links that allow the reader to jump from one page to other page quickly and easily.
-**Markup Language:** Markup Language is a way computers speack to each other to control how text is processed and presented. A markup language allows you to annotate text, and these annotations provide additional meaning to the contents of a document(Tags are markup). 
+**Markup Language:** A Markup Language is a system used to annotate text in a way that defines how the text should be structured, processed, and presented. These annotations, often in the form of tags, provide additional meaning to the content of a document and instruct how it should be displayed or interpreted. 
 
 To implement this HTML has:
 
