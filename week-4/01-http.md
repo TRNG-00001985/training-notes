@@ -95,7 +95,7 @@ HTTP request verbs or methods indicate the action that a client hopes to perform
 - similar to update
 - changes partial aspects of a resource
 - request and response have a body
-- not safe, idempotent, allowed in HTML forms, or cacheable
+- not safe, idempotent, not allowed in HTML forms, or cacheable
 
 **HEAD**
 
@@ -198,7 +198,7 @@ URL stands for uniform resource locator and forms an address on the web.
 **Example:**
 
 https://app.revature.com/myActivities
-protocol: http
+protocol: https
 fully qualified domain name: app.revature.com
 path: myActivities 
 
@@ -246,6 +246,7 @@ The HTTP lifecycle refers to the series of steps involved in the communication b
 
 6. **Client renders/display the response:** If the response includes HTML, CSS, or other content that can be rendered by the client (e.g., a web browser), it will be displayed or rendered to the user. This step is specific to clients capable of rendering the received content.
 
+![http-lifecyle](./images/http-lifecycle.jpg)
 
 ## Exposing and consuming the REST API
 
