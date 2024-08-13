@@ -47,6 +47,24 @@
           "rating": 4
         }
       ]
+    },
+    {
+      "id": 4,
+      "name": "Wireless Mouse",
+      "description": "Dell wireless mouse with 1600 DPI optical sensor.",
+      "price": 25.99,
+      "category": "Electronics",
+      "stock": 150,
+      "image": "https://example.com/images/wireless-mouse.jpg",
+      "rating": 4.5,
+      "reviews": [
+        {
+          "id": 1,
+          "user": "Jane Doe",
+          "comment": "Great mouse for the price!",
+          "rating": 5
+        }
+      ]
     }
   ]
 }

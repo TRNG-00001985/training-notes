@@ -20,9 +20,7 @@ To implement this HTML has:
 
 **1. Tags:** Tags are used to **mark up the start of an HTML element**. The syntax for tags is `<element-name>`. Most tags should be closed `</element-name>`. In simple terms Tags act like contaiers. They tell us someting about the information about that lies between opening and closing tags.
 
-<i><b>Note:</b> The terms "tag" and "element"
-are often used interchangeably, however, an
-element comprises the opening tag and the closing tag and any content that lies between them.</i>
+<i><b>Note:</b> The terms "tag" and "element" are often used interchangeably, however, annelement comprises the opening tag and the closing tag and any content that lies between them.</i>
 
 
 
@@ -48,7 +46,7 @@ Example:
 ```
 ## Structure
 
-1. `<html>`: 
+1. `<html>`
 2. `<head>`: Before the `<body>` element you will often see a `<head>` element. This contains information about the page
 3. `<title>`: You will usually find a `<title>` element inside the `<head>` element. The contents of the `<title>`
 4. `<body>`: Everything inside this element is shown inside the main browser window.
@@ -300,4 +298,3 @@ HTML5 introduced form validation features, allowing you to validate user input b
 
 
 
-Navigate to [HTML-tags-and-attributes](Html-tags-and-attributes.html) to view the HTML Tags and Attribute explanation with examples.

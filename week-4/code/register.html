@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Registration</h1>
+
+    <form action="success.html" method="post">
+
+        <a href="success.html">success</a>
+
+        <label for="firstname">First Name:</label>
+        <input type="text" name="firstname" id="firstname" required>
+
+        <br>
+
+        <label for="lastname">Last Name:</label>
+        <input type="text" name="lastname" id="lastname" required> 
+
+        <br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+
+        <br>
+
+        <label for="phone-number">Phone Number</label>
+        <input type="tel" name="phone-number" id="phone-number" pattern=""[0-9]{10}>
+
+        <br>
+
+
+        <label for="dob">Date of Birth</label>
+        <input type="date" name="dob" id="dob">
+
+        <br>
+
+        <label for="gender">Gender</label>
+        <input type="radio" name="male" id="gender" value="male">Male
+        <input type="radio" name="female" id="gender" value="female">Female
+        <input type="radio" name="other" id="gender" value="other">Other
+
+        <br>
+
+        <label for="country">Country</label>
+        <select name="country" id="country">
+            <option value="india">India</option>
+            <option value="usa">USA</option>
+        </select>
+
+        <br>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" minlength="8" maxlength="40">
+
+        <br>
+
+        <label> Intrests:</label>
+        <label for="tech">Technology</label>
+        <input type="checkbox" name="tech" value="tech">
+        <label for="sports">Sports</label>
+        <input type="checkbox" name="sports" value="sports">
+
+        <br>
+
+        <button type="submit">Submit</button>
+
+
+    </form>
+    
+</body>
+</html>
