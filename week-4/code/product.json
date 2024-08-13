@@ -1,0 +1,52 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Wireless Mouse",
+      "description": "HP wireless mouse with 1600 DPI optical sensor.",
+      "price": 25.99,
+      "category": "Electronics",
+      "stock": 150,
+      "image": "https://example.com/images/wireless-mouse.jpg",
+      "rating": 4.5,
+      "reviews": [
+        {
+          "id": 1,
+          "user": "John Doe",
+          "comment": "Great mouse for the price!",
+          "rating": 5
+        },
+        {
+          "id": 2,
+          "user": "Jane Smith",
+          "comment": "Comfortable to use, but the battery life could be better.",
+          "rating": 4
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Bluetooth Speaker",
+      "description": "Portable Bluetooth speaker with 10-hour battery life and water resistance.",
+      "price": 45.99,
+      "category": "Audio",
+      "stock": 85,
+      "image": "https://example.com/images/bluetooth-speaker.jpg",
+      "rating": 4.7,
+      "reviews": [
+        {
+          "id": 1,
+          "user": "Alice Brown",
+          "comment": "Fantastic sound quality for the size.",
+          "rating": 5
+        },
+        {
+          "id": 2,
+          "user": "Bob Johnson",
+          "comment": "Very durable and the battery lasts long.",
+          "rating": 4
+        }
+      ]
+    }
+  ]
+}
