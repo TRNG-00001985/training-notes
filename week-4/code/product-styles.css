@@ -1,0 +1,32 @@
+
+@font-face {
+    font-family: rubik;
+    src: url(./fonts/Rubik-VariableFont_wght.ttf),
+        url(./fonts/Rubik-Italic-VariableFont_wght.ttf);
+    font-weight: normal;
+
+}
+
+:root {
+    --item-background : bisque;
+}
+.product-item {
+    padding: 1%;
+}
+
+.product-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr; /* Defines three columns with different widths */
+    grid-template-rows: auto; /* Defines rows, auto adjusts to content */
+    gap: 10px; /* Space between grid items */
+
+}
+
+.product-item {
+
+    font-family: rubik;
+
+    background-color: var(--item-background);
+    padding: 2%;
+    width: 30%;
+}

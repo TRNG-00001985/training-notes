@@ -3,12 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokemon</title>
+    <title >Pokemon</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        nav {
+
+            background-color: chocolate;
+
+        }
+    </style>
 </head>
 <body>
     <header>
 
-        <h1>All about Pikachu</h1>
+        <h1 style="background-color: aquamarine;">All about Pikachu</h1>
 
         <nav>
             <ul>
@@ -33,7 +43,7 @@
             <h2>Introduction</h2>
 
             <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png" alt="pikachu-img" >
-            <p>Hi there!<strong>Pikachu</strong>, the most famous <em>Electric-type</em> pokemon. I'm bright yellow and I have red cheeks that store static electricity</p>
+            <p>Hi there!<span></apsn><strong>Pikachu</strong>, the most famous <em>Electric-type</em> pokemon. <div>I'm bright yellow and I have red cheeks that store static electricity</div></span></p>
 
 
         </section>
@@ -107,11 +117,23 @@
 
 
     </main>
-
+<hr>
     <footer>
 
-        <p>Copyright &copy; 2024 Pokemon Company. All rights reserved.</p>
-        <p>to learn more about pikachu refer <a href="https://www.pokemon.com/us/pokedex/pikachu" target="_blank">Poki Index</a></p>
+        <div class="container">
+            <div class="item" id="copyright">
+                <p>Copyright &copy; 2024 Pokemon Company. All rights reserved.</p>
+
+            </div>
+            <div class="item" id="reference">
+                <p>to learn more about pikachu refer <a href="https://www.pokemon.com/us/pokedex/pikachu" target="_blank">Poki Index</a></p>
+
+            </div>
+            <div class="item" id="email">
+                <button>info@pokemon.com</button>
+            </div>
+        </div>
+
 
     </footer>
     

@@ -1,0 +1,55 @@
+
+* {
+    background-color: azure;
+
+}
+
+@media only screen and (max-width: 480px) {
+    /* Styles for mobile */
+    .container {
+      width: 70%;
+      background-color: blueviolet;
+    }
+  }
+  
+
+p {
+    color: #0000ff !important;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 2%;
+    border: 1px solid;
+    margin: 3%;
+    
+
+}
+
+p {
+    color: black;
+}
+
+nav {
+
+    background-color: aqua;
+
+}
+
+.container > .item {
+    background-color: chartreuse;
+}
+
+.container p{
+    color: brown;
+}
+
+#copyright + #reference {
+    background-color: aqua;
+} 
+
+#copyright ~ #email {
+    background-color: aqua;
+
+button:hover {
+    background-color: aqua;
+}
