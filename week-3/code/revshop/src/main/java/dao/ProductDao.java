@@ -11,7 +11,7 @@ public interface ProductDao {
 	
 	Optional<ProductResponse> getProductById(long id) throws Exception;
 	boolean createProduct(ProductRequest productRequest);
-	boolean updateProduct(ProductResponse productResponse);
+	boolean updateProduct(ProductRequest productRequest, long productId);
 	boolean deleteProduct(long id);
 	List<Optional<ProductResponse>> getAllProducts();
 
