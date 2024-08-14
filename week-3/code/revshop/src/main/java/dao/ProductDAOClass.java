@@ -94,7 +94,7 @@ public class ProductDAOClass implements ProductDao{
 	}
 
 	@Override
-	public boolean updateProduct(ProductResponse productResponse) {
+	public boolean updateProduct(ProductRequest productRequest, long productId) {
 		// TODO Auto-generated method stub
 		return false;
 	}
