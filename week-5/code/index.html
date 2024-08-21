@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <title>Document</title>
+    <style>
+        .demo {
+
+            background-color: red;
+
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <script>
+
+        console.log("Hey");
+    </script> -->
+
+     <nav class="nav-bar">
+
+        <input type="text" name="" id="textinput" >
+
+        <a >Home</a>
+        <a >About us</a>
+        <a style="display: none;">register</a>
+       </nav>
+
+
+       <button onclick="changeBackground()">click!</button>
+
+       <br>
+        <h1 id="h1" class = "heading">H1</h1>
+        <h2 class = "heading">H2</h2>
+
+
+        <div class="container">
+
+            <div class="item" id="one">
+
+                <p>div 1</p>
+
+            </div>
+
+            <div class="item" id="two">
+
+                <p>div 2</p>
+
+            </div>
+
+            <div class="item" id="three">
+                <p> div 3</p>
+            </div>
+
+
+           
+
+
+        </div>
+
+
+        <div id="outer">
+            <div id="inner">
+                <button id="trigger">event</button>
+            </div>
+        </div>
+
+
+<script>
+    // const heading = document.querySelector("h1");
+    // console.log(heading.innerText)
+
+const forthchild = document.createElement('p');
+
+const replament = document.createElement('p');
+
+replament.innerText = "replament";
+
+forthchild.innerText = "paragaph";
+
+const thirdChild = document.querySelector("#three")
+
+const container = document.querySelector(".container");
+
+
+// child
+container.appendChild(forthchild);
+
+//container.replaceChild(replament, thirdChild);
+
+
+
+const parentDiv = document.createElement('div');
+
+// parent
+parentDiv.setAttribute('id', 'parent-div-three');
+
+thirdChild.parentNode.insertBefore(parentDiv, thirdChild);
+
+parentDiv.appendChild(thirdChild);
+
+let secondDiv = document.querySelector("#two");
+
+let clonedDiv = secondDiv.cloneNode(true);
+
+console.log(clonedDiv)
+
+container.appendChild(clonedDiv);
+
+
+const navbar = document.querySelector(".nav-bar");
+
+console.log(navbar.innerHTML);
+
+// modifing the text
+//navbar.innerHTML = "<h1>heading</h1>";
+
+
+// modifing the styles
+function random(value){
+
+    return Math.floor(Math.random() * (value+1));
+}
+function changeBackground(){
+
+    document.body.style.background= `rgb(${random(255)} ${random(255)} ${random(255)})`;
+
+    document.body.style.color = "blue";
+
+
+}
+
+function printEvent(){
+
+    console.log()
+}
+
+thirdChild.setAttribute("class", "demo");
+
+// events
+
+const textfield = document.querySelector("#textinput");
+
+textfield.addEventListener("keydown", (event) => {
+    console.log(event.key);
+})
+
+const outer = document.querySelector("#outer");
+const inner = document.querySelector("#inner");
+const eventbutton = document.querySelector("#trigger");
+// outer.addEventListener("click", () =>{
+//     console.log("outer div bubbling")
+// })
+// inner.addEventListener("click", (event) =>{
+//     console.log("inner div bubbling")
+
+
+// })
+
+// eventbutton.addEventListener("click", () =>{
+//     console.log("button div bubbling")
+// })
+
+outer.addEventListener("click", () =>{
+    console.log("outer div captuting")
+}, true)
+
+inner.addEventListener("click", (event) =>{
+    console.log("inner div captuting")
+
+    event.stopPropagation();
+}, true)
+
+eventbutton.addEventListener("click", () =>{
+    console.log("button captuting")
+}, true)
+
+
+
+
+</script>
+
+    
+</body>
+</html>
