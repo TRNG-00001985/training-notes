@@ -89,7 +89,7 @@ async function printProductById(id){
 }
 
 
-printProductById(1);
+//printProductById(1);
 
 
 async function createProduct(){
