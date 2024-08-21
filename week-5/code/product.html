@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="products.js"></script>
+</head>
+<body>
+
+    <button>Get Product</button>
+
+    <input type="number">
+
+    <form action="" method="post"></form>    
+</body>
+
+<script>
+    async function getProductById(id){
+
+let product = await fetch(`http://localhost:3000/products/${id}`);
+let data = await product.json();
+
+const body = document.querySelector("body");
+
+const containerDiv = document.createElement('div');
+const name = document.createElement("h1");
+name.innerText = data["name"];
+const description = document.createElement('p');
+description.innerText = data["description"];
+
+containerDiv.appendChild(name);
+containerDiv.appendChild(description);
+body.appendChild(containerDiv);
+
+}
+
+    const button = document.querySelector("input");
+
+    button.addEventListener("keydown", (event) => getProductById(event.key));
+</script>
+</html>
