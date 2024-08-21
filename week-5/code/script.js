@@ -91,3 +91,72 @@ async function printProductById(id){
 
 printProductById(1);
 
+
+async function createProduct(){
+
+    const url = 'http://localhost:3000/products/';
+
+    const body = JSON.stringify(
+        {
+            name: "Bluetooth Speaker",
+            description: "Portable Bluetooth speaker with 10-hour battery life and water resistance.",
+            price: 45.99,
+            category: "Audio",
+            stock: 85,
+            image: "https://example.com/images/bluetooth-speaker.jpg",
+            rating: 4.7,
+            reviews: [
+              {
+                id: 1,
+                user: "Alice Brown",
+                comment: "Fantastic sound quality for the size.",
+                rating: 5
+              },
+              {
+                id: 2,
+                user: "Bob Johnson",
+                comment: "Very durable and the battery lasts long.",
+                rating: 4
+              }
+            ],
+          }
+
+    )
+
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: body
+    });
+
+
+    console.log(response.json());
+
+    
+
+}
+
+createProduct();
+
+
+async function deleteProduct() {
+
+    const url = `http://localhost:3000/products/22`;
+    const response = await fetch(url + new URLSearchParams({
+        id: 22
+    }) , {
+        method: 'DELETE',
+    });
+
+    console.log(response);
+
+
+
+    
+}
+
+deleteProduct();
+
+
