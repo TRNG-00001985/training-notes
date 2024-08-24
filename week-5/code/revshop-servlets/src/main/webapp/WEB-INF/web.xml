@@ -5,6 +5,16 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   
+ <error-page>
+<error-code>404</error-code>
+<location>/error</location>
+</error-page>
+
+<error-page>
+<exception-type>jakarta.servlet.ServletException</exception-type>
+<location>/exception</location>
+</error-page>
+  
  <!--<servlet>
   <servlet-name>demo</servlet-name>
   <servlet-class>controller.ProductController</servlet-class>
@@ -26,4 +36,6 @@
 <url-pattern>/products/*</url-pattern>
 </servlet-mapping>
 -->
+
+
 </web-app>

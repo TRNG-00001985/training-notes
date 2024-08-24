@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.util.List;
 
 import dao.exception.ProductException;
@@ -10,9 +11,11 @@ import dto.ProductResponse;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import service.ProductService;
 
 
@@ -44,6 +47,10 @@ public class ProductController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		HttpSession session = req.getSession();
+		
+		session.setAttribute("name", "demo");
+		
 		resp.setContentType("text/html");
 		PrintWriter out = resp.getWriter();
 		
@@ -53,7 +60,7 @@ public class ProductController extends HttpServlet{
 		System.out.println(req.getRequestURI().substring("revshop-servlets/products".length()+1));
 		
 		//revshop-servelets/products/
-		if(req.getRequestURI().substring("revshop-servlets/products".length()+1).equals("/all")) {
+		if(req.getRequestURI().substring("/revshop-servlets/products".length()+1).equals("/all")) {
 			try {
 				List<ProductResponse> products = productService.getAllProducts();
 				
@@ -76,20 +83,26 @@ public class ProductController extends HttpServlet{
 		}
 		
 		else {
+			
+			System.out.println("");
 		
 		
 	
 
-		Long id = Long.parseLong(req.getRequestURI().substring("revshop-servlets/products/".length()+1));
+		Long id = Long.parseLong(req.getRequestURI().substring("/revshop-servlets/products/".length()+1));
 		try {
-			RequestDispatcher rd = req.getRequestDispatcher("/success");
+			
+		
 
 			ProductResponse product = productService.getProductById(id);
 			
 			out.println("<H1>Product Controller</H1>");
 			out.printf("<p> %s </p>", product.getName() );
+			req.setAttribute("name", product.getName());
 			
-			rd.forward(req, resp);
+			
+			System.out.println(req.getAttribute("name"));
+
 			
 			
 		} catch (ProductException e) {
@@ -98,16 +111,38 @@ public class ProductController extends HttpServlet{
 		}
 		}
 		
-
-		
-		
-		
-		
 		
 	}
 	
-	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		
+//		HttpSession session = req.getSession();
+//		
+//		
+//		Cookie [] cookies =  req.getCookies();
+//		
+//		for(Cookie c: cookies) {
+//			
+//			if(c.getName().equals("id")) {
+//				
+//				System.out.println(c.getValue());
+//			}
+//			
+//			
+//		}
+//		
+		
+		
+		
+
+//		if(session.getAttribute("id")==null) {
+//			
+//			res.sendRedirect("/revshop-servlets/login.jsp");
+//			
+//		}
+		
+		try {
+//		
 		String name = req.getParameter("name");
 		String skuCode = req.getParameter("skuCode");
 		float price = Float.parseFloat(req.getParameter("price"));
@@ -116,19 +151,33 @@ public class ProductController extends HttpServlet{
 		
 		boolean response = productService.createProduct(productRequest);
 		
-		PrintWriter out = res.getWriter();
-		
-		if(response) {
-			
-			out.println("product created");
-			
+		throw new ServletException("unable to create product");
 		}
+		
+		catch (Exception e) {
+			
+			throw new ServletException("unable to create product");
+			// TODO: handle exception
+		}
+		
+		
+//		session.setAttribute("name", name);
+//		
+//		PrintWriter out = res.getWriter();
+//		
+//		if(response) {
+//			
+//			req.getRequestDispatcher("/success").forward(req, res);
+//			
+//		}
 		
 	}
 	
 	@Override
 	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		// get
+		// put
 	}
 	
 	@Override

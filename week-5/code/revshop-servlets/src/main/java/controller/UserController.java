@@ -11,24 +11,29 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet("/success")
-public class SuccessServlet extends HttpServlet{
+
+@WebServlet("/user/")
+public class UserController extends HttpServlet{
 	
 	@Override
-	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		resp.setContentType("text/html");
+		// logged in 
 		
 		HttpSession session = req.getSession();
 		
+		session.setAttribute("id", 1);
+		
+		Cookie cookie = new Cookie("id", "1");
+		
+		resp.addCookie(cookie);
+		
+		PrintWriter out = resp.getWriter();
+		
+		out.println("user logged in with id: " + session.getAttribute("id"));
 		
 		
-				
-		PrintWriter out =  resp.getWriter();
-		
-		out.println("Successfully created the product " + session.getAttribute("name"));
-		
+		// TODO Auto-generated method stub
 	}
 
 }
