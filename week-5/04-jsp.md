@@ -37,6 +37,44 @@ A java class that follows certain conventions:
 - elements that relay messages to the JSP container and affect how it compiles the JSP page
 - page(language, import statements and error pages), include(translation phase) and taglib (custom tags). 
 
+1. `@page`: used to include something with page scope
+
+ex:
+
+```jsp
+
+<%@ page attribute="value"%>
+
+```
+
+**attributes**
+
+- language
+- extends
+- import
+- session
+- autoFlush
+- contentType
+- errorPage
+- isErrorPage
+- info
+- isELIgnored
+- isThreadSafe
+
+2.  `@include`: include jsp files
+
+
+```jsp
+<%@ inlcude file="header.jsp"%>
+```
+
+
+3. `@taglib`: use external tags in jsp
+
+```jsp
+<%@ taglib uri="" prefix="" %>
+```
+
 
 ### Scriplets
 
@@ -66,9 +104,17 @@ void printSomething(){
 
 <i>refere code for Composing HTML documents in jsp and Storing Form Data</i>
 
+### Expression
+
+- code in jsp expression is written to reponse output stream
+
+```jsp
+<%=  statement %>  
+```
+
 ### Implicit Objects
 
-- predefined variables available in jsp
+- builtin objects available in jsp
 
 #### Request
 
