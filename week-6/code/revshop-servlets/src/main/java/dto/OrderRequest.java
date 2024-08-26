@@ -34,7 +34,7 @@ public class OrderRequest {
 	private String createdAt;
 	// address
 	// payment info
-	private String productIds;
+	private String productIds ="1,23,45";
 	 * 
 	 * 
 	 */

@@ -160,12 +160,20 @@ ${attributeName}
 
 The Extensible Markup Language (XML)
 
-```xml
+```jsp
+
+<%@ page contentType="text/xml" %>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<product>
+<name> ${name} </name>
+<price> ${price} </price>
+</product>
 
 ```
 
 ```jsp
-
+<jsp:include page="xml-processing.jsp"/>
 ```
 
 [jsp-xml](https://www.oracle.com/technical-resources/articles/javase/webappdev2.html)
@@ -174,4 +182,49 @@ The Extensible Markup Language (XML)
 
 - **JavaMail API:** Use the JavaMail API to send emails from JSP.
 
+
+dependencies
+
+```xml
+<!-- https://mvnrepository.com/artifact/jakarta.mail/jakarta.mail-api -->
+<dependency>
+    <groupId>jakarta.mail</groupId>
+    <artifactId>jakarta.mail-api</artifactId>
+    <version>2.1.3</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.eclipse.angus/angus-mail -->
+<!-- https://mvnrepository.com/artifact/jakarta.activation/jakarta.activation-api -->
+<dependency>
+    <groupId>jakarta.activation</groupId>
+    <artifactId>jakarta.activation-api</artifactId>
+    <version>2.1.3</version>
+</dependency>
+
+<dependency>
+    <groupId>org.eclipse.angus</groupId>
+    <artifactId>angus-mail</artifactId>
+    <version>2.0.3</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.eclipse.angus/angus-activation -->
+<dependency>
+    <groupId>org.eclipse.angus</groupId>
+    <artifactId>angus-activation</artifactId>
+    <version>2.0.1</version>
+</dependency>
+```
+
 ### Internationalization & Localization
+
+**Internationalization(i18)**: developing an application that supports more than one language and date format
+
+**Localization(i10)**: The process of adapting the internationalized application to a specific region or locle.
+
+
+<i>Refer code for implementation</i>
+
+
+
+
+
+
+
