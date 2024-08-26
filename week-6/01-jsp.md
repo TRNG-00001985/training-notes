@@ -147,17 +147,11 @@ ${attributeName}
     ```jsp
     <jsp:include page="header.jsp" />
     ```
-
-
-
-
 ##### Validation
 - **Tag Libraries:** Use JSTL tags for validating user input and handling errors.
   - **Example:** Custom validation tags can be used to handle form inputs and validation like weblogic in jsp 2.3.
 
 [referene](https://docs.oracle.com/cd/E24329_01/web.1211/e21049/validation_tags.htm#WBAPP459)
-
-
 
 
 
