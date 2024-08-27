@@ -1,0 +1,18 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    	http://www.springframework.org/schema/context
+    	http://www.springframework.org/schema/context/spring-context-3.0.xsd
+    	http://www.springframework.org/schema/aop
+    	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+       " default-init-method="init" default-destroy-method="destroy">
+
+<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
+<!--
+<bean id="connection" class="utils.ConnectionFactory"></bean>
+<bean id="userDao" class="dao.UserDAOImpl"></bean>
+<bean id="userService" class= "service.UserService">
+<constructor-arg ref="userDao"/>
+</bean>-->
+</beans>
