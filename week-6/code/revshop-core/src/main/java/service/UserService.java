@@ -23,11 +23,15 @@ public class UserService {
 
 	}
 	
+	//@Autowired
 	private UserDAOImpl userDAO;
-
-    public UserService(UserDAOImpl userDAO) {
-        this.userDAO = userDAO;
-    }
+	
+	@Autowired
+	public UserService(UserDAOImpl userDao)
+	{
+		this.userDAO = userDao;
+	}
+	
     
     
     @Lookup
