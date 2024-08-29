@@ -3,6 +3,7 @@ package service;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Lookup;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
@@ -23,13 +24,20 @@ public class UserService {
 
 	}
 	
-	//@Autowired
+	@Autowired
 	private UserDAOImpl userDAO;
 	
 	@Autowired
 	public UserService(UserDAOImpl userDao)
 	{
 		this.userDAO = userDao;
+	}
+	
+	@Autowired
+	public void setUserDao(UserDAOImpl userDao) {
+		
+		this.userDAO = userDao;
+		
 	}
 	
     
