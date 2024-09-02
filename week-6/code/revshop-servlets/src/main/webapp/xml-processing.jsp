@@ -6,4 +6,3 @@
 <name>Name</name>
 <price>3.45</price>
 </product>
-</body>

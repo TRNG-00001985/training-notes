@@ -37,7 +37,14 @@ public class ProductService {
 		 		
 		return productDao.getAllProducts();
 	}
-	
+
+    public boolean updateProduct(ProductResponse productResponse) {
+        return productDao.updateProduct(productResponse);
+    }
+
+    public boolean deleteProduct(long id) {
+        return productDao.deleteProduct(id);
+    }
 	public static void main(String[] args) throws Exception {
 		ProductService p = new ProductService();
 //		

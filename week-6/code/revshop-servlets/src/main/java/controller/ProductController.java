@@ -64,7 +64,6 @@ public class ProductController extends HttpServlet{
 			try {
 				List<ProductResponse> products = productService.getAllProducts();
 				
-				out.println("<H1>Product Controller</H1>");
 				
 				for(ProductResponse p: products) {
 					out.printf("<p> %d </p>", p.getId() );
@@ -175,15 +174,52 @@ public class ProductController extends HttpServlet{
 	
 	@Override
 	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		// get
-		// put
+		try {
+			Long id = Long.parseLong(req.getParameter("id"));
+			String name = req.getParameter("name");
+			String skuCode = req.getParameter("skuCode");
+			float price = Float.parseFloat(req.getParameter("price"));
+			
+			ProductResponse productResponse = new ProductResponse(id, name, skuCode, price);
+			boolean response = productService.updateProduct(productResponse);
+			
+			if (response) {
+				resp.setStatus(HttpServletResponse.SC_OK);
+				resp.getWriter().write("Product updated successfully");
+			} else {
+				resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+				resp.getWriter().write("Failed to update product");
+			}
+			
+		} catch (Exception e) {
+			throw new ServletException("Unable to update product", e);
+		}
 	}
 	
 	@Override
 	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
+	
+		try {
+			
+			System.out.println(req.getParameter("id"));
+			Long id = Long.parseLong(req.getParameter("id"));
+			
+			boolean response = productService.deleteProduct(id);
+			
+			if (response) {
+				resp.setStatus(HttpServletResponse.SC_OK);
+				resp.getWriter().write("Product deleted successfully");
+			} else {
+				resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+				resp.getWriter().write("Failed to delete product");
+			}
+			
+		} catch (Exception e) {
+			throw new ServletException("Unable to delete product", e);
+		}
 	}
+	
 	@Override
 	public void destroy() {
 		// TODO Auto-generated method stub

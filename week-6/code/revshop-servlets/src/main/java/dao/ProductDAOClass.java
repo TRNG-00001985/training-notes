@@ -92,14 +92,52 @@ public class ProductDAOClass implements ProductDao{
 
 	@Override
 	public boolean updateProduct(ProductResponse productResponse) {
-		// TODO Auto-generated method stub
-		return false;
+	    String sql = "UPDATE Products SET name = ?, sku_code = ?, price = ? WHERE id = ?";
+
+	    try (Connection con = ConnectionFactory.getConnectionFactory().getConnection();
+	         PreparedStatement stmt = con.prepareStatement(sql)) {
+
+	        stmt.setString(1, productResponse.getName());
+	        stmt.setString(2, productResponse.getSkuCode());
+	        stmt.setDouble(3, productResponse.getPrice());
+	        stmt.setLong(4, productResponse.getId());
+
+	        int result = stmt.executeUpdate();
+
+	        if (result > 0) {
+	            logger.info("Product with ID " + productResponse.getId() + " updated successfully.");
+	            return true;
+	        }
+
+	    } catch (SQLException e) {
+	        logger.error("Error updating product with ID " + productResponse.getId(), e);
+	    }
+
+	    return false;
 	}
+
 
 	@Override
 	public boolean deleteProduct(long id) {
-		// TODO Auto-generated method stub
-		return false;
+	    String sql = "DELETE FROM Products WHERE id = ?";
+
+	    try (Connection con = ConnectionFactory.getConnectionFactory().getConnection();
+	         PreparedStatement stmt = con.prepareStatement(sql)) {
+
+	        stmt.setLong(1, id);
+
+	        int result = stmt.executeUpdate();
+
+	        if (result > 0) {
+	            logger.info("Product with ID " + id + " deleted successfully.");
+	            return true;
+	        }
+
+	    } catch (SQLException e) {
+	        logger.error("Error deleting product with ID " + id, e);
+	    }
+
+	    return false;
 	}
 
 	@Override
