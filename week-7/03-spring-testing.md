@@ -6,7 +6,7 @@
 
 # Testing a Spring Application
 
-##@Testing Services using Mockito
+### 1. Testing Services using Mockito
 
 Mockito is a popular mocking framework used for unit testing in Java applications. When testing services in a Spring application:
 
@@ -15,7 +15,7 @@ Mockito is a popular mocking framework used for unit testing in Java application
 - Verify method calls using `Mockito.verify()`.
 
 
-## 2. Integration Testing
+### 2. Integration Testing
 
 Integration tests ensure that different components of your application work together correctly. In Spring:
 
@@ -30,7 +30,7 @@ For testing, it's common to use an in-memory database like H2:
 - Create an `application-test.properties` file in `src/test/resources`.
 - Use `@ActiveProfiles("test")` in your test classes.
 
-application-test.properties:
+application-test.properties: for h2 database
 ```properties
 spring.datasource.url=jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
 spring.datasource.driverClassName=org.h2.Driver
@@ -39,8 +39,6 @@ spring.datasource.password=
 
 spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 spring.jpa.hibernate.ddl-auto=create-drop
-
-spring.jpa.properties.hibernate.globally_quoted_identifiers=true
 ```
 
 ## 4. Testing Controllers using MockMvc
@@ -51,31 +49,12 @@ MockMvc allows you to test your controllers without starting a full HTTP server:
 - Inject `MockMvc` to perform requests.
 - Use `@MockBean` to mock service dependencies.
 
-Example:
-```java
-@WebMvcTest(UserController.class)
-class UserControllerTest {
+- BDD encourages writing tests in a human-readable language that focuses on the behavior of the application.
 
-    @Autowired
-    private MockMvc mockMvc;
+- `given` some preconditions (Arrange)
+- `when` an action occurs (Act)
+- then `verify` the output (Assert)
 
-    @MockBean
-    private UserService userService;
-
-    @Test
-    void testCreateUser() throws Exception {
-        UserRequest userRequest = new UserRequest("test@example.com", "password");
-        when(userService.createUser(any(UserRequest.class))).thenReturn(true);
-
-        mockMvc.perform(post("/user")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(new ObjectMapper().writeValueAsString(userRequest)))
-                .andExpect(status().isCreated());
-
-        verify(userService).createUser(any(UserRequest.class));
-    }
-}
-```
 
 ## Key Points to Remember:
 

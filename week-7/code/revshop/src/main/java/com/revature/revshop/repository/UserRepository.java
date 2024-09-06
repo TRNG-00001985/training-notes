@@ -14,7 +14,7 @@ import com.revature.revshop.model.User;
 public interface UserRepository extends JpaRepository<User, Long>{
 	
 	User findByEmailAndPassword(String email, String password);
-	
+	User findByEmail(String email);
 	@Query("SELECT u FROM User u WHERE u.email= :email AND u.password= :password")
 	User findByEmailAndPasswordCustomQuery(String email, String password);
 
