@@ -1,38 +1,34 @@
 package com.revature.revshop.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.*;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@ToString
-
 @Entity
-@Table(name="user")
+@Table(name = "user", uniqueConstraints = {@UniqueConstraint(columnNames = {"email"}) })
 public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private long id; 
 	@Column(name="first_name")
 	private String firstName;
 	@Column(name="last_name")
 	private String lastName;
 	private String email;
 	private String password;
-	private Role role;
+	@Enumerated(EnumType.STRING)
+	private Role role ;
+	
+	
 
 }
