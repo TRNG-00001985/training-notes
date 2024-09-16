@@ -130,20 +130,7 @@ Eureka Client is used by microservices to register themselves with the **Eureka 
 [reference](https://spring.io/guides/gs/service-registration-and-discovery)
 
 
-### API Gateway - Spring Cloud Gateway
-- **Definition**: The API gateway routes requests to appropriate services, acting as an entry point for all client requests.
-- **Key Features**:
-  - **Routing**: Routes requests to appropriate microservices.
-  - **Security**: Can provide security (authentication, authorization) at the gateway level.
-  - **Load Balancing**: Distributes traffic to backend services.
-  - **Caching and Monitoring**: Integrates with monitoring and can cache responses.
 
 
----
 
-### Load Balancer - Ribbon
-- **Definition**: Ribbon is a client-side load balancer used to distribute requests across available instances of a microservice.
-- **Key Features**:
-  - **Dynamic Load Balancing**: Automatically discovers service instances via Eureka.
-  - **Custom Rules**: Can implement load balancing strategies (e.g., Round-Robin, Weighted Response Time).
-  - **Client-Side**: Load balancing happens at the client, allowing flexibility in selecting a service instance.
+
